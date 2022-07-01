@@ -1,11 +1,11 @@
-
+import SearchBar from './components/molecules/searchBar';
 import './index.css';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
+      <SearchBar />
     </div>
   );
 }
 
-export default App;
