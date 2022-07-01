@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 import axios from 'axios';
-
+import Results from './Results';
 
 
 export default function SearchBar() {
   let [keyword, setKeyword] = useState("");
+  let [results, setResults] = useState("");
   
-  function handleResponse(response){
-      let word = response.data[0].word;
-      let meaning = response.data[0].meanings[0].definitions[0].definition;
-      let phonetic = response.data[0].phonetic;
-      let synonym = response.data[0].meanings[0].synonyms;
-      console.log(synonym);
+  function handleResponse(response){ 
+      setResults(response.data[0]);
 }
 
   function search(event) {
@@ -24,8 +21,6 @@ export default function SearchBar() {
   function handleKeywordChange(event) {
    setKeyword(event.target.value);
   }
-
-
   return (
     <>
       <div className="text-center mt-3">
@@ -42,6 +37,7 @@ export default function SearchBar() {
           <input type="submit" value="search" />
         </form>
       </div>
+      <Results results={results} />
     </>
   );
 }
