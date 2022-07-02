@@ -13,7 +13,7 @@ export default function Synonyms(props) {
   console.log(props.words, "hello");
   return (
     <div className="container mx-auto border p-4">
-      <h4>Synonyms</h4>
+      <h4 className="mb-3">Synonyms</h4>
       {!toggle && (
         <div>
           {props.words.meanings.map(function (meaning, index) {
@@ -33,12 +33,12 @@ export default function Synonyms(props) {
       )}
      
       {toggle && (
-        <div>
+        <div className="overflow-scroll w-full">
           {props.words.meanings.map(function (synonyms, index) {
             return (
-              <div key={index}>
+              <div key={index} className="d-flex col-auto">
                 {synonyms.synonyms.map(function (synonym, index) {
-                  return <div key={index}>{toggle && <p>{synonym}</p>}</div>;
+                  return <div key={index} className="col-3">{toggle && <p className="me-3">{synonym}</p>}</div>;
                 })}
               </div>
             );
