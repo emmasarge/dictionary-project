@@ -10,7 +10,7 @@ export default function Synonyms(props) {
     setOpenToggle(false);
   }
 
-  console.log(props.words, "hello");
+
   return (
     <div className="container mx-auto border p-4">
       <h4 className="mb-3">Synonyms</h4>
@@ -19,32 +19,52 @@ export default function Synonyms(props) {
           {props.words.meanings.map(function (meaning, index) {
             return (
               <div key={index}>
-                {meaning.synonyms.slice(0,1).map(function (synonym, index) {
+                {meaning.synonyms.slice(0, 1).map(function (synonym, index) {
                   return (
                     <div key={index}>
-                      <p className="mb-1">{synonym}</p>
+                      {synonym === null ? (
+                        <p className="mb-1">{synonym}</p>
+                      ) : (
+                        <p className="mb-1">{synonym}</p>
+                      )}
                     </div>
                   );
                 })}
               </div>
             );
-          })}<p onClick={openToggle} className="mt-2 fw-bold toggleBtn">See more</p>
-        </div> 
+          })}
+          {props.words.meanings[0].synonyms.length === 0 ? (
+            <p className="smallText fst-italic ms-1 mt-0">No synonyms available</p>
+          ) : (
+            <p onClick={openToggle} className="mt-2 fw-bold toggleBtn">
+              See more
+            </p>
+          )}
+        </div>
       )}
-     
+
       {toggle && (
         <div className="overflow-scroll w-full">
           {props.words.meanings.map(function (synonyms, index) {
             return (
               <div key={index} className="d-flex col-auto">
                 {synonyms.synonyms.map(function (synonym, index) {
-                  return <div key={index} className="col-3">{toggle && <p className="me-3">{synonym}</p>}</div>;
+                  return (
+                    <div key={index} className="col-3">
+                      {toggle && <p className="me-3">{synonym}</p>}
+                    </div>
+                  );
                 })}
               </div>
             );
           })}
-
-          <p onClick={closeToggle} className="fw-bold toggleBtn">See less</p>
+          {props.words.meanings[0].synonyms.length === 0 ? (
+            <p className="hidden"></p>
+          ) : (
+            <p onClick={closeToggle} className="fw-bold toggleBtn">
+              See less
+            </p>
+          )}
         </div>
       )}
     </div>

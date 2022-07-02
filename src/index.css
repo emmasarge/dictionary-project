@@ -12,6 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .form-control{
   width: 60%!important;
   border-right: 0!important;
@@ -42,7 +43,9 @@ input[type=submit]:hover{
 .textGray {
   color: slategray;
 }
-
+.resource-link a {
+  color:darkgoldenrod;
+}
 .toggleBtn {
   color: darkgoldenrod;
 }
@@ -63,9 +66,13 @@ input[type=submit]:hover{
 span audio {
   width: 90%;
 }
-
+.phonetic-result{
+  align-items: center;
+  margin-bottom: 20px;
+}
 @media only screen and (min-width: 600px){
   span audio {
     width: 300px;
+    height: 40px;
   }
 }

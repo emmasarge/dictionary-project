@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
 
-export default function SearchBar() {
-  let [keyword, setKeyword] = useState("");
+export default function SearchBar(props) {
+  let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [loaded, setLoaded] = useState(false);
   let [results, setResults] = useState("");
   let [pictures, setPictures] = useState([]);
@@ -42,8 +42,8 @@ export default function SearchBar() {
   if(loaded) {
   return (
     <>
-      <div className="d-flex flex-row align-items-center justify-content-center my-3">
-        <h1>Dictionary</h1>
+      <div className="d-flex flex-row align-items-center justify-content-center my-4">
+        <h1 className="mt-4">Dictionary</h1>
         <p className="ms-2 mt-3 fst-italic">(noun)</p>
       </div>
       <div className="container w-80">
@@ -51,6 +51,7 @@ export default function SearchBar() {
           <input
             type="search"
             placeholder="look up..."
+            defaultValue={props.defaultKeyword}
             className="form-control col-sm-2 search-input w-100 col-auto"
             onChange={handleKeywordChange}
           />
