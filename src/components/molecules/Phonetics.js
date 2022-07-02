@@ -9,10 +9,10 @@ export default function Phonetics(props) {
         return (
           <div key={index} className="row phonetic-result">
             <p className="col-sm-2">{phonetic.text}</p>
-            {phonetic.text === null || phonetic.audio === false ? (
+            {phonetic.text === null || phonetic.audio.length === 0 ? (
               <span className="hidden"></span>
             ) : (
-              <span  className="col-sm-2"><ReactAudioPlayer src={phonetic.audio} controls /></span>
+              <span className="col-sm-2"><ReactAudioPlayer src={phonetic.audio} controls /></span>
             )}
           </div>
         );
