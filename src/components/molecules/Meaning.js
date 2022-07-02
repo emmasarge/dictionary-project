@@ -9,11 +9,11 @@ export default function Meaning(props) {
         {props.meaning.meanings.map(function (meaning, index) {
           return (
             <div key={index}>
-              <p>
+              <p className="my-0">
                 <span className="fw-bold">Definition type:</span>
-                <span className="fst-italic"> {meaning.partOfSpeech}</span>
+                <span className="fst-italic"> {meaning.partOfSpeech}.</span>
               </p>
-              <p>{meaning.definitions[0].definition}</p>
+              <p className="defText mt-0">{meaning.definitions[0].definition}</p>
               {meaning.definitions[0].example == null ? (
                 <span className="hidden"></span>
               ) : (

@@ -39,6 +39,10 @@ input[type=submit]:hover{
   font-weight: 300;
   color: slategray;
 }
+.defText {
+  font-weight: 300;
+  color: slategray;
+}
 
 .textGray {
   color: slategray;
