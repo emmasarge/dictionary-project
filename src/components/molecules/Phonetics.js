@@ -10,7 +10,7 @@ export default function Phonetics(props) {
           <div key={index} className="row phonetic-result">
             <p className="col-sm-2">{phonetic.text}</p>
             {phonetic.text === null || phonetic.audio.length === 0 ? (
-              <span className="hidden"></span>
+              <span className="hidden fst-italic smallText col-sm-3 mb-2">No audio available</span>
             ) : (
               <span className="col-sm-2"><ReactAudioPlayer src={phonetic.audio} controls /></span>
             )}
