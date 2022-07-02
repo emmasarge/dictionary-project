@@ -4,8 +4,8 @@ import Synonyms from "./Synonyms";
 export default function Meaning(props) {
   return (
     <div>
-      <div className="container border mb-3">
-        <h3>Definitions</h3>
+      <div className="container border mb-3 p-4">
+        <h4>Definitions</h4>
         {props.meaning.meanings.map(function (meaning, index) {
           return (
             <div key={index}>

@@ -3,13 +3,17 @@ import ReactAudioPlayer from "react-audio-player";
 
 export default function Phonetics(props) {
   return (
-    <div className="container border mt-3">
-      <h3>Phonetics</h3>
+    <div className="container border mt-3 p-4">
+      <h4>Phonetics</h4>
       {props.phonetic.phonetics.slice(0, 2).map(function (phonetic, index) {
         return (
           <div key={index}>
             <p>{phonetic.text}</p>
-            <ReactAudioPlayer src={phonetic.audio} onPlay controls />
+            {phonetic.text == null ? (
+              <></>
+            ) : (
+              <ReactAudioPlayer src={phonetic.audio} onPlay controls />
+            )}
           </div>
         );
       })}

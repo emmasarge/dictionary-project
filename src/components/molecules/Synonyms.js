@@ -12,7 +12,7 @@ export default function Synonyms(props) {
 
   console.log(props.words, "hello");
   return (
-    <div className="container mx-auto border">
+    <div className="container mx-auto border p-4">
       <h4>Synonyms</h4>
       {!toggle && (
         <div>
