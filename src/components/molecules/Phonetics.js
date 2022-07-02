@@ -8,7 +8,7 @@ export default function Phonetics(props) {
         return (
           <div key={index}>
             <p>{phonetic.text}</p>
-            <a>{phonetic.audio}</a>
+            <p>{phonetic.audio}</p>
           </div>
         );
       })}
