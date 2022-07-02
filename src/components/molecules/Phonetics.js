@@ -9,7 +9,7 @@ export default function Phonetics(props) {
         return (
           <div key={index}>
             <p>{phonetic.text}</p>
-            {phonetic.text == null || phonetic.audio == false ? (
+            {phonetic.text === null || phonetic.audio === false ? (
               <span className="hidden"></span>
             ) : (
               <span><ReactAudioPlayer src={phonetic.audio} controls /></span>
