@@ -3,7 +3,7 @@ import './index.css';
 
 export default function App() {
   return (
-    <div className="App container mb-4">
+    <div className="App container mb-4 maxWidth">
       <SearchBar />
   
     </div>

@@ -22,13 +22,13 @@ export default function Synonyms(props) {
                 {meaning.synonyms.slice(0,1).map(function (synonym, index) {
                   return (
                     <div key={index}>
-                      <p>{synonym}</p>
+                      <p className="mb-1">{synonym}</p>
                     </div>
                   );
                 })}
               </div>
             );
-          })}<p onClick={openToggle} className="fw-bold">See more</p>
+          })}<p onClick={openToggle} className="mt-2 fw-bold toggleBtn">See more</p>
         </div> 
       )}
      
@@ -44,7 +44,7 @@ export default function Synonyms(props) {
             );
           })}
 
-          <p onClick={closeToggle} className="fw-bold">See less</p>
+          <p onClick={closeToggle} className="fw-bold toggleBtn">See less</p>
         </div>
       )}
     </div>

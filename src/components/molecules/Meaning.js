@@ -5,7 +5,7 @@ export default function Meaning(props) {
   return (
     <div>
       <div className="container border mb-3 p-4">
-        <h4>Definitions</h4>
+        <h4 className="mb-3">Definitions</h4>
         {props.meaning.meanings.map(function (meaning, index) {
           return (
             <div key={index}>

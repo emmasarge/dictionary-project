@@ -46,16 +46,17 @@ export default function SearchBar() {
         <h1>Dictionary</h1>
         <p className="ms-2 mt-3 fst-italic">(noun)</p>
       </div>
-      <div>
-        <form className="mx-auto text-center" onSubmit={handleSubmit}>
+      <div className="container w-80">
+        <form className="mx-auto text-center d-flex row" onSubmit={handleSubmit}>
           <input
             type="search"
             placeholder="look up..."
-            className="form-control search-input"
+            className="form-control col-sm-2 search-input w-100 col-auto"
             onChange={handleKeywordChange}
           />
-          <input type="submit" value="search" />
+          <input type="submit" value="search" className="col-sm-2"/>
         </form>
+        <p className="smallText ms-1 fst-italic">for example you can look up 'tree', 'run', 'sunset'..</p>
       </div>
       <Results results={results} photos={pictures} />
     </>
