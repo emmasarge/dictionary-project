@@ -14,11 +14,14 @@ export default function Meaning(props) {
                 <span className="fst-italic"> {meaning.partOfSpeech}</span>
               </p>
               <p>{meaning.definitions[0].definition}</p>
-             {meaning.definitions[0].example == null ?(<span className="hidden"></span>):(<p>
+              {meaning.definitions[0].example == null ? (
+                <span className="hidden"></span>
+              ) : (
+                <p>
                   <span className="fw-bold">Example: </span>
                   {meaning.definitions[0].example}
-                </p>)} 
-              
+                </p>
+              )}
             </div>
           );
         })}
