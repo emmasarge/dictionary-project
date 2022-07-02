@@ -4,17 +4,25 @@ import Synonyms from "./Synonyms";
 export default function Meaning(props) {
   return (
     <div>
-    <div className="container border mb-3">
-      {props.meaning.meanings.map(function (meaning, index) {
-        return (
-          <div key={index}>
-            <p className="fw-bold">Definition:</p>
-            <p className="fst-italic">{meaning.partOfSpeech}</p>
-            <p>{meaning.definitions[0].definition}</p>
-            <p>{meaning.definitions[0].example}</p>
-          </div>
-        );
-      })}</div>
+      <div className="container border mb-3">
+        <h3>Definitions</h3>
+        {props.meaning.meanings.map(function (meaning, index) {
+          return (
+            <div key={index}>
+              <p>
+                <span className="fw-bold">Definition type:</span>
+                <span className="fst-italic"> {meaning.partOfSpeech}</span>
+              </p>
+              <p>{meaning.definitions[0].definition}</p>
+             {meaning.definitions[0].example == null ?(<span className="hidden"></span>):(<p>
+                  <span className="fw-bold">Example: </span>
+                  {meaning.definitions[0].example}
+                </p>)} 
+              
+            </div>
+          );
+        })}
+      </div>
       <Synonyms words={props.meaning} />
     </div>
   );
